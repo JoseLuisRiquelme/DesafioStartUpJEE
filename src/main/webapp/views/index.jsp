@@ -2,11 +2,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Home</title>
-</head>
+<%@ include file="html/head.jsp" %>
 <body>
-
+<div class="container text-center ">
+<%@ include file="html/nav.jsp" %>
+<h1 class="text-center">Bienvenido al sistema empresarial</h1>
+<h2 class="text-center">Elija una opcion para continuar</h2>
+<div class="container m-5">
+<a href="${pageContext.request.contextPath}/SingUpController" type="button" class="btn btn-primary">Registrarse</a>
+<a href="${pageContext.request.contextPath}/LoginController" type="button" class="btn btn-secondary m-auto">Iniciar sesion</a>
+</div>
+<%@ include file="html/footer.jsp" %>
+</div>
 </body>
 </html>

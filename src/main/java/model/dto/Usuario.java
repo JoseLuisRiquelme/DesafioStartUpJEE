@@ -23,6 +23,15 @@ public class Usuario {
 		this.password = password;
 		this.peso = peso;
 	}
+	
+	public Usuario( String correo, String nick, String nombre, String password, int peso) {
+		super();
+		this.correo = correo;
+		this.nick = nick;
+		this.nombre = nombre;
+		this.password = password;
+		this.peso = peso;
+	}
 
 	public int getId() {
 		return id;
@@ -71,6 +80,14 @@ public class Usuario {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", correo=" + correo + ", nick=" + nick + ", nombre=" + nombre + ", password="
+				+ password + ", peso=" + peso + "]";
+	}
+	
+	
 	
 	
 
