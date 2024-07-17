@@ -87,6 +87,32 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		}
 		return u;
 	}
+	
+	@Override
+	public Usuario read(Usuario u) {
+
+		try {
+			Connection c = Conexion.getCon();
+			Statement s = c.createStatement();
+			String query = "select id,correo, nick, nombre, password, peso from usuarios where correo='" + u.getCorreo()+"'"
+			+" and password='"+u.getPassword()+"'";
+			ResultSet rs = s.executeQuery(query);
+			while (rs.next()) {
+				u.setId(rs.getInt("id"));
+				u.setCorreo(rs.getString("correo"));
+				u.setNick(rs.getString("nick"));
+				u.setNombre(rs.getString("nombre"));
+				u.setPassword(rs.getString("password"));
+				u.setPeso(rs.getInt("peso"));
+
+				return u;
+			}
+		} catch (SQLException e) {
+			System.out.print("ERROR en el metodo correo read");
+			e.printStackTrace();
+		}
+		return u;
+	}
 
 	@Override
 	public void update(Usuario u) {

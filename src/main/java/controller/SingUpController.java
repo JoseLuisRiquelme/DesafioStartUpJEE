@@ -29,6 +29,7 @@ public class SingUpController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		try {
 		UsuarioDAO uDAO= new UsuarioDAOImpl();
 		Usuario u = null;
 		String nick = request.getParameter("nick");
@@ -38,10 +39,21 @@ public class SingUpController extends HttpServlet {
 		int peso= Integer.parseInt(request.getParameter("weight"));
 		
 		u=new Usuario(correo,nick,nombre,password,peso);
+		Usuario uRSU=uDAO.read(u);
+		if(uRSU.getCorreo()==u.getCorreo()) {
+			request.setAttribute("usuarioSU", u);
+			getServletContext().getRequestDispatcher("/views/userAlreadyExist.jsp").forward(request,response);	
+		}
+		else {
+			uDAO.create(u);
+			request.setAttribute("usuario", u);
+			getServletContext().getRequestDispatcher("/views/home.jsp").forward(request,response);
+		}
 		
-		uDAO.create(u);
-		System.out.println(u.toString());
-		
+		}catch(NumberFormatException e) {
+			System.out.println("ERROR");
+			getServletContext().getRequestDispatcher("/SingUpController").forward(request,response);
+		}
 	}
 
 }

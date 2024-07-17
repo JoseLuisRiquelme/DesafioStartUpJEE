@@ -18,4 +18,6 @@ public interface UsuarioDAO {
 	
 	 void delete(int id);
 
+	Usuario read(Usuario u);
+
 }

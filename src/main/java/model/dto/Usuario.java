@@ -32,6 +32,12 @@ public class Usuario {
 		this.password = password;
 		this.peso = peso;
 	}
+	
+	public Usuario( String correo, String password) {
+		super();
+		this.correo = correo;
+		this.password = password;
+	}
 
 	public int getId() {
 		return id;

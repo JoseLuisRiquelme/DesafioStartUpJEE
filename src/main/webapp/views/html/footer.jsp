@@ -5,7 +5,7 @@
 <footer class="py-5 bg-dark">
 <div class="container">
 		<p class="m-0 text-center text-white">
-			Autor: Jose Luis Riquelme &copy; <strong style="margin-rigth: 5px;">Contactame
+			Autor :  Jose Luis Riquelme &copy; <strong style="margin-rigth: 5px;">Contactame
 				aca</strong><i class="fa-solid fa-arrow-right ms-2"></i> <a
 				href="https://www.linkedin.com/in/jose-luis-riquelme-saez/"
 				target="_blank"><i class="fa-brands fa-linkedin fa-xl ms-2"></i></a>

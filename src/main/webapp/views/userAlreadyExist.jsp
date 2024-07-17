@@ -6,11 +6,10 @@
 <body>
 <div class="container text-center ">
 <%@ include file="html/nav.jsp" %>
-<h1 class="text-center">Bienvenido al sistema empresarial</h1>
-<h2 class="text-center">Elija una opcion para continuar</h2>
+<h1 class="text-center">El correo ingresado: ${usuarioSU.correo} ya esta asociado a una cuenta existente</h1>
 <div class="container m-5">
-<a href="${pageContext.request.contextPath}/SingUpController" type="button" class="btn btn-primary">Registrarse</a>
 <a href="${pageContext.request.contextPath}/LoginController" type="button" class="btn btn-secondary m-auto">Iniciar sesion</a>
+<a  href="${pageContext.request.contextPath}" class="btn btn-primary">Regresar</a>
 </div>
 <%@ include file="html/footer.jsp" %>
 </div>
